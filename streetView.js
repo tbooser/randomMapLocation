@@ -33,10 +33,12 @@ function streetViewData(data, status) {
       title: data.location.description,
       draggable: true
     });
-
+    
+    google.maps.event.addListener(marker,  'rightclick',  function(rightClickEvent) { myLocations(data.location.description + data.location.latLng) });
+    
     panorama.setPano(data.location.pano);
     panorama.setPov({
-      heading: 270,
+      heading: 0,
       pitch: 0
     });
     panorama.setVisible(true);

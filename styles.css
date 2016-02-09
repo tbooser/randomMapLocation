@@ -1,6 +1,6 @@
-      #body{
+/*      #body{
       	background-color:black;
-      }
+      }*/
       #map {
         width: 680px;
         height: 760px;
@@ -14,6 +14,9 @@
       	float: left;
       }
 
+      #myLocations{
+      	float:left;
+      }
 
         #pano {
         width: 680px;
@@ -22,4 +25,8 @@
         border: 4px solid black;
         padding: 10px;
         float: left;
+      }
+
+      #signin{
+      	float:right;
       }
