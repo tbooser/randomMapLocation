@@ -27,8 +27,6 @@ function initStreetMap() {
 }
 
 function streetViewData(data, status) {
-  
-  if (status === google.maps.StreetViewStatus.OK) {
     var marker = new google.maps.Marker({
       position: data.location.latLng,
       map: map,
@@ -52,7 +50,4 @@ function streetViewData(data, status) {
       });
       panorama.setVisible(true);
     });
-  } else {
-    console.error('Street View data not found for this location.');
-  }
 }
