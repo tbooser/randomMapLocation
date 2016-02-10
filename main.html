@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>GugleMapsPano</title>
     <link rel="stylesheet" type="text/css" href= "styles.css">
-
+    <link rel="import" href="polymer.html">
     <script type="text/javascript" src="streetView.js"></script>
     <script type="text/javascript" src="rightClick.js"></script>
     <script type="text/javascript" src="webcomponents.js"></script>
@@ -13,8 +13,15 @@
 
   </head>
   <body id="body">
+      <script>
+      function load() {
+        initStreetMap()
+        initPano()
+      }
+      window.onload = load;
+    </script>
     
-    <div id="map">  
+    <div id="map">
     </div>
     
     <div id="pano">
@@ -25,18 +32,11 @@
     </div>
 
     <div id='myLocations' style="display:none">
-
     </div>
-    <button type="button" onclick= 'myLocations()' onclick="showDiv()">MyLocations</button>
+    
+    <button type="button" onclick= 'alertLocations()' onclick="showDiv()">MyLocations</button>
 
-    <div id='signin'>
-      <form>
-        Username:
-          <input type="text" name="username">
-        Password:
-          <input type="password" name="password">
-      </form>
-    </div>
+   
 
   </body>
 
