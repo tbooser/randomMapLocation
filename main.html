@@ -2,41 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>GugleMapsPano</title>
+    <title>GoogleMapsPano</title>
     <link rel="stylesheet" type="text/css" href= "styles.css">
     <link rel="import" href="polymer.html">
     <script type="text/javascript" src="streetView.js"></script>
-    <script type="text/javascript" src="rightClick.js"></script>
-    <script type="text/javascript" src="webcomponents.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"async defer></script>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
   </head>
   <body id="body">
-      <script>
-      function load() {
-        initStreetMap()
-        initPano()
-      }
-      window.onload = load;
-    </script>
-    
-    <div id="map">
-    </div>
-    
-    <div id="pano">
-    </div>
-    
-    <div id='controls'>
-      <button type="button" onclick= 'initStreetMap()' >NewLocation</button>
-    </div>
+      
+      <script> function load(){ initMap() }; window.onload = load </script>
+      
+      <div id="map"></div>
+        
+      <div id="pano"></div>
 
-    <div id='myLocations' style="display:none">
-    </div>
-    
-    <button type="button" onclick= 'alertLocations()' onclick="showDiv()">MyLocations</button>
+      <div id='myLocations' style="display:none"></div>
 
-   
+      <div id='controls'>
+          
+          <button type="button" onclick= 'initMap()' >NewLocation</button>
+        
+      </div>
+    
+      <button type="button" onclick= 'alertLocations()'>MyLocations</button>
 
   </body>
 
