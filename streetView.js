@@ -28,9 +28,6 @@ function initMap() {
   });
 }
 
-
-
-
 function streetViewData(data) {
    
     var marker = new google.maps.Marker({                     //Creates a red google maps marker.
