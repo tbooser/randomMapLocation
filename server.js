@@ -12,9 +12,9 @@ function handleRequest(request, response){
 }
 
 
-routes.get('/', function (req, res) {
-  res.sendFile(path.join( __dirname + 'main.html' ));
-});
+// routes.get('/', function (req, res) {
+//   res.sendFile(path.join( __dirname + 'main.html' ));
+// });
 
 //Create a server
 var server = http.createServer(handleRequest);
