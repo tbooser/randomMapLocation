@@ -1,6 +1,7 @@
 var express = require('express');
 var http = require('http');
 var app = express();
+var routes = express.Router();
 
 const PORT= process.env.PORT || 5000; 
 	app.listen(PORT);
@@ -8,6 +9,11 @@ const PORT= process.env.PORT || 5000;
 function handleRequest(request, response){
     response.end('It Works!! Path Hit: ' + request.url);
 }
+
+
+routes.get('/', function (req, res) {
+  res.sendFile(path.join( __dirname + '/dist/index.html' ));
+});
 
 //Create a server
 var server = http.createServer(handleRequest);
