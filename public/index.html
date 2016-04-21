@@ -6,23 +6,20 @@
     <link rel="stylesheet" type="text/css" href= "styles.css">
     <script type="text/javascript" src="streetView.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"async defer></script>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
   </head>
   <body id="body">
       
       <script> function load(){ initMap() }; window.onload = load </script>
       
-      <div id="map"></div>
-        
       <div id="pano"></div>
+
+      <div id="map"></div>
 
       <div id='myLocations' style="display:none"></div>
 
       <div id='controls'>
           
-          <button type="button" onclick= 'initMap()' >NewLocation</button>
-
-          <button type="button" onclick= 'alertLocations()'>MyLocations</button>
+          <button id='mapButton' type="button" onclick= 'initMap()' >New Location</button>
         
       </div>
 

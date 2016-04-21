@@ -1,25 +1,39 @@
       #map {
         width: 680px;
         height: 760px;
-        margin: auto;
         border: 4px solid black;
         padding: 10px;
         float: right;
+        padding-right: 30px;
+        margin-right: 80px;
+        margin-top: 70px;
       }
 
-      #controls{
-      	float: left;
-      }
-
-      #myLocations{
-      	float:left;
-      }
-
-        #pano {
+      #pano {
         width: 680px;
         height: 760px;
-        margin: auto;
         border: 4px solid black;
         padding: 10px;
-        float: left;
+        float: right;
+        padding-right: 30px;
+         margin-top: 70px;
+         margin-right: 40px;
+
+
       }
+
+
+      #mapButton{
+        background-color: #4CAF50; 
+        border: 2px solid black;
+        color: white;
+        padding: 15px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bolder;
+        font-family: Avenir;
+        position: absolute;
+        margin-left: 60px;
+        margin-top: 200px;
+      }
+
