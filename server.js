@@ -4,7 +4,7 @@ var app = express();
 var routes = express.Router();
 var path = require('path');
 
-const PORT= process.env.PORT || 5000; 
+const PORT= process.env.PORT || 4000; 
 	app.listen(PORT);
 //We need a function which handles requests and send response
 function handleRequest(request, response){
