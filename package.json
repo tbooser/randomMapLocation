@@ -1,0 +1,23 @@
+{
+  "name": "random_map_location",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbooser/randomMapLocation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbooser/randomMapLocation/issues"
+  },
+  "homepage": "https://github.com/tbooser/randomMapLocation#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
