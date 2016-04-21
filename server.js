@@ -1,52 +1,41 @@
-var http = require("http");
-var fs = require("fs");
-var path = require("path");
-var mime = require("mime");
 
-http.createServer(function(request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("It's alive!");
-  response.end();
-}).listen(3000);
+var express = require('express');
+var Path = require('path');
+var routes = express.Router();
 
-function send404(response) {
-  response.writeHead(404, {"Content-type" : "text/plain"});
-  response.write("Error 404: resource not found");
-  response.end();
+//route to your index.html
+var assetFolder = Path.resolve(__dirname, './public/');
+  routes.use(express.static(assetFolder));
+
+if (process.env.NODE_ENV !== 'test') {
+//The following GET request now works but only if the catch-all 
+//route is commented out as well as routes.use below the assetFolder
+// declaration. It works but I don't think it is correct
+  
+  
+  // The Catch-all Route
+  // This is for supporting browser history pushstate.
+  // NOTE: Make sure this route is always LAST.
+  routes.get('/*', function(req, res){
+    res.sendFile( assetFolder + '/index.html' )
+  })
+
+  // We're in development or production mode;
+  // create and run a real server.
+  var app = express();
+  // configure our server with all the middleware and and routing
+
+// export our app for testing and flexibility, required by index.js
+module.exports = app;
+
+  // Mount our main router
+  app.use('/', routes);
+
+  // Start the server!
+  var port = process.env.PORT || 4000;
+  app.listen(port);
+  console.log("Listening on port", port);
+} else {
+  // We're in test mode; make this file importable instead.
+  module.exports = routes;
 }
-
-function sendPage(response, filePath, fileContents) {
-  response.writeHead(200, {"Content-type" : mime.lookup(path.basename(main.html))});
-  response.end(fileContents);
-}
-
-function serverWorking(response, absPath) {
-  fs.exists(absPath, function(exists) {
-    if (exists) {
-      fs.readFile(absPath, function(err, data) {
-        if (err) {
-          send404(response)
-        } else {
-          sendPage(response, absPath, data);
-        }
-      });
-    } else {
-      send404(response);
-    }
-  });
-}
-
-var server = http.createServer(function(request, response) {
-  var filePath = false;
-
-  if (request.url == '/') {
-    filePath = "public/index.html";
-  } else {
-    filePath = "public" + request.url;
-  }
-
-  var absPath = "./" + filePath;
-  serverWorking(response, absPath);
-});
-
-var port_number = server.listen(process.env.PORT || 3000);
