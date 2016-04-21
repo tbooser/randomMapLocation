@@ -1,23 +1,25 @@
       #map {
-        width: 680px;
-        height: 760px;
+        width: 35%;
+        height: 750px;
         border: 4px solid black;
         padding: 10px;
         float: right;
         padding-right: 30px;
         margin-right: 80px;
         margin-top: 70px;
+        position: relative;
       }
 
       #pano {
-        width: 680px;
-        height: 760px;
+        width: 35%;
+        height: 750px;
         border: 4px solid black;
         padding: 10px;
         float: right;
         padding-right: 30px;
         margin-top: 70px;
         margin-right: 40px;
+        position: relative;
       }
 
       #mapButton{
@@ -29,7 +31,7 @@
         font-size: 20px;
         font-weight: bolder;
         font-family: Avenir;
-        position: absolute;
+        position: relative;
         margin-left: 55px;
         margin-top: 200px;
       }
@@ -38,6 +40,7 @@
         font-family: Avenir;
         bottom: 0;
         font-size: 10px;
-        text-decoration: none; 
+        text-decoration: none;
+        position: absolute; 
       }
 
